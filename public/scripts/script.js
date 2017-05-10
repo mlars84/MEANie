@@ -17,7 +17,6 @@ vm.addRecord = function(){
   });
   vm.nameIn ='';
   vm.locationIn='';
-  vm.getRecords();
 }; //end addRecord
 
 //function to get record from DB
@@ -30,6 +29,22 @@ vm.getRecords = function(){
     console.log( vm.allTheRecords );
   }, function myError( response ){
     console.log( response.statusText );
+    vm.getRecords();
   });
+
 }; //end getRecords
+
+//function to delete a record from DOM and DB
+vm.delete = function(id){
+    console.log('delete', id);
+    $http({
+      method: 'DELETE',
+      url: '/deleteRecord/' + id,
+    }).then(function mySuccess(response){
+      vm.getRecords();
+    }, function myError(response){
+      console.log(response);
+    });
+  };
+
 }); //end controller function
