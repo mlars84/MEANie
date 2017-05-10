@@ -31,7 +31,7 @@ app.get( '/getRecords', function( req, res ){
 ourModel.find().then( function( data ){
 res.send( data );
 });
-});
+}); //end getRecords GET
 
 app.post( '/testPost', function( req, res ){
 console.log( 'req.body.name: ' + req.body.name );
@@ -42,9 +42,9 @@ name:req.body.name,
 location:req.body.location
 };
 // create new record
-var newRecord=ourModel( recordToAdd );
+var newRecord = ourModel( recordToAdd );
 newRecord.save();
-});
+}); //end testPost POST
 
 app.listen( 8080, 'localhost', function( req, res ){
 console.log( 'listening on 8080' );
