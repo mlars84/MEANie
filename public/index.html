@@ -5,6 +5,7 @@
     <title>MEANie</title>
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/script.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="vendors/bootstrap.css">
   </head>
   <body ng-app="myApp">
     <img src='images/meanie_3.jpg' width=800 height=400 />
@@ -18,7 +19,7 @@
       <div class="container row">
         <div ng-repeat="objectToSend in wmp.allTheRecords">
           <h2>{{objectToSend.name}}</h2>
-          <h3>objectToSend.location</h3>
+          <h3>{{objectToSend.location}}</h3>
         </div>
     </div>
     </div>

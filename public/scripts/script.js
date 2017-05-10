@@ -17,6 +17,7 @@ vm.addRecord = function(){
   });
   vm.nameIn ='';
   vm.locationIn='';
+  vm.getRecords();
 }; //end addRecord
 
 //function to get record from DB
