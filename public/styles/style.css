@@ -1,0 +1,29 @@
+.jumbotron {
+  background-color: #db32a7;
+  text-align: center;
+}
+body {
+  background-color: #44ab88;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.inputsButtons {
+    text-align: center;
+    border-radius: 10px;
+    padding-bottom: 50rem;
+}
+
+.col-sm-3 {
+  border: 1px solid #db32a7;
+  margin: 5px 5px 5px 5px;
+  background-color: #d0ddd5;
+  padding-bottom: 15px;
+  text-align: center;
+}
