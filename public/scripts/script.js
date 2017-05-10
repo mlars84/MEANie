@@ -25,10 +25,10 @@ vm.getRecords = function(){
     method: 'GET',
     url: '/getRecords',
   }).then( function( response ){
-    vm.allTheRecords = response;
+    vm.allTheRecords = response.data;
     console.log( vm.allTheRecords );
-  }), function myError(response) {
-    console.log(response.statusText);
-  };
+  }, function myError( response ){
+    console.log( response.statusText );
+  });
 }; //end getRecords
 }); //end controller function
