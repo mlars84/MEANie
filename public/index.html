@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MEANie</title>
-    <script src="vendors/angular.min.js" charset="utf-8"></script>
-    <script src="scripts/script.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="vendors/bootstrap.css">
-    <link rel="stylesheet" href="styles/style.css">
-  </head>
-  <body ng-app="myApp">
-    <div class="jumbotron"><img src='images/meanie_3.jpg' width=800 height=400 /></div>
-    <h1>MEANie</h1>
-    <p>A simple, ugly MEAN stack example. Console has output from GET call.</p>
-    <div class="inputsButtons" ng-controller="WhereMyPeeps as wmp" ng-init="wmp.getRecords()">
-      <input type="text" value="" ng-model="wmp.nameIn" placeholder="Name">
-      <input type="text" value="" ng-model="wmp.locationIn" placeholder="Location">
-      <button ng-click='wmp.addRecord()'>Add</button>
-      <button ng-click='wmp.getRecords()'>Display</button>
-      <div class="container row">
-        <div ng-repeat="objectToSend in wmp.allTheRecords" class="col-sm-3">
-          <h2>{{objectToSend.name}}</h2>
-          <h3>{{objectToSend.location}}</h3>
-          <button ng-click="wmp.delete(objectToSend._id)">Delete</button>
-        </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MEANie</title>
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/script.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="vendors/bootstrap.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app="myApp">
+  <div class="jumbotron"><img src='images/meanie_3.jpg' width=800 height=400 /></div>
+  <h1>MEANie</h1>
+  <p>A simple, ugly MEAN stack example. Console has output from GET call.</p>
+  <div class="inputsButtons" ng-controller="MeanieController as mc" ng-init="mc.getRecords()">
+    <input type="text" value="" ng-model="mc.nameIn" placeholder="Name">
+    <input type="text" value="" ng-model="mc.locationIn" placeholder="Location">
+    <button ng-click='mc.addRecord()'>Add</button>
+    <button ng-click='mc.getRecords()'>Display</button>
+    <div class="container row">
+      <div ng-repeat="rec in mc.allTheRecords" class="records col-sm-4">
+        <h2>{{rec.name}}</h2>
+        <h3>{{rec.location}}</h3>
+        <button ng-click="mc.delete(rec._id)">Delete</button>
+      </div>
     </div>
-    </div>
-  </body>
+  </div>
+</body>
 </html>
